@@ -16,7 +16,10 @@ body {
 }
 
 .hero {
-  background: linear-gradient(to bottom right, #1b2838, #4e5d6c);
+
+  background: linear-gradient(-45deg, #1b2838, #4e5d6c, #223344, #4e5d6c);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
   color: #fff;
   text-align: center;
   padding: 6rem 0;
@@ -30,6 +33,13 @@ body {
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
+
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+
 }
 
 .section {
@@ -61,4 +71,21 @@ body {
   color: #fff;
   text-align: center;
   padding: 1rem 0;
+}
+
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
