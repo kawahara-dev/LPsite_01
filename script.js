@@ -11,3 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }, options);
   targets.forEach(el => observer.observe(el));
 });
+
+window.addEventListener("scroll", () => {
+  const heroHeight = document.querySelector(".hero").offsetHeight;
+  const illust = document.getElementById("illust");
+
+  if (window.scrollY > heroHeight / 2) {
+    illust.classList.add("visible");
+  } else {
+    illust.classList.remove("visible");
+  }
+});
