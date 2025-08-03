@@ -9,6 +9,11 @@ body {
   color: #333;
 }
 
+:root {
+  --accent: #ff6b6b;
+  --accent-dark: #ff4757;
+}
+
 .container {
   width: 90%;
   max-width: 1100px;
@@ -19,6 +24,16 @@ h2 {
   font-size: 2.4rem;
   margin-bottom: 40px;
   text-align: center;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 10px auto 0;
 }
 
 .hero {
@@ -37,7 +52,7 @@ h2 {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 2rem;
-  background: #ff8c00;
+  background: var(--accent);
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
@@ -46,6 +61,7 @@ h2 {
 
 .btn:hover {
   transform: scale(1.05);
+  background: var(--accent-dark);
 }
 
 .section {
@@ -71,7 +87,17 @@ h2 {
 
 .feature {
   flex: 1 1 250px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 4px solid var(--accent);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature img {
+  width: 80px;
+  margin-bottom: 1rem;
 }
 
 .feature:hover {
@@ -85,7 +111,7 @@ h2 {
 }
 
 .cta .btn {
-  background: #0077cc;
+  background: var(--accent);
 }
 
 .footer {
@@ -122,6 +148,13 @@ h2 {
   flex: 1;
 }
 
+.order-img {
+  flex: 1;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .fixed-illust {
   position: fixed;
   bottom: 0;
@@ -144,5 +177,34 @@ h2 {
   .fixed-illust {
     width: 220px;   /* スマホは小さめ */
   }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .order-layout {
+    flex-direction: column;
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.reviews-photo {
+  width: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 2rem;
 }
 
