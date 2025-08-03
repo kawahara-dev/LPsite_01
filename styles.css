@@ -9,6 +9,11 @@ body {
   color: #333;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 :root {
   --accent: #ff6b6b;
   --accent-dark: #ff4757;
@@ -186,8 +191,10 @@ h2::after {
 }
 
 .card img {
-  width: 80px;
-  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto 1rem;
 }
 
 .card:hover {
